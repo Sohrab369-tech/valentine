@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine? 💕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ffeef8 0%, #ffe0f0 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(255, 105, 180, 0.3);
+            text-align: center;
+            max-width: 500px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            color: #ff1493;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .heart-image {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        button {
+            padding: 15px 40px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .yes-btn {
+            background: linear-gradient(135deg, #ff1493, #ff69b4);
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 20, 147, 0.4);
+        }
+
+        .yes-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(255, 20, 147, 0.6);
+        }
+
+        .yes-btn:active {
+            transform: scale(0.95);
+        }
+
+        .no-btn {
+            background: #ffb6c1;
+            color: #ff1493;
+            cursor: pointer;
+        }
+
+        .no-btn:hover {
+            background: #ffc0cb;
+        }
+
+        .celebration {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .celebration-content {
+            text-align: center;
+            animation: bounceIn 0.8s ease;
+        }
+
+        .dancing-minion {
+            width: 250px;
+            height: 250px;
+            margin: 20px auto;
+            animation: dance 0.5s ease-in-out infinite;
+        }
+
+        @keyframes dance {
+            0%, 100% {
+                transform: rotate(-5deg) translateY(0);
+            }
+            25% {
+                transform: rotate(5deg) translateY(-10px);
+            }
+            50% {
+                transform: rotate(-5deg) translateY(0);
+            }
+            75% {
+                transform: rotate(5deg) translateY(-10px);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .celebration h2 {
+            font-size: 3em;
+            color: #ff1493;
+            margin-bottom: 20px;
+        }
+
+        .hearts {
+            font-size: 4em;
+            animation: pulse 1s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will You Be My Valentine? 💕</h1>
+        
+        <svg class="heart-image" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <!-- Minion Body -->
+            <ellipse cx="100" cy="120" rx="60" ry="70" fill="#FFD700"/>
+            
+            <!-- Overalls -->
+            <rect x="40" y="110" width="120" height="80" fill="#4169E1" rx="10"/>
+            <circle cx="70" cy="130" r="8" fill="#C0C0C0"/>
+            <circle cx="130" cy="130" r="8" fill="#C0C0C0"/>
+            <line x1="70" y1="130" x2="70" y2="100" stroke="#4169E1" stroke-width="8"/>
+            <line x1="130" y1="130" x2="130" y2="100" stroke="#4169E1" stroke-width="8"/>
+            
+            <!-- Goggles -->
+            <rect x="50" y="70" width="100" height="35" fill="#333" rx="17"/>
+            <circle cx="100" cy="87" r="25" fill="#FFF"/>
+            <circle cx="100" cy="87" r="15" fill="#8B4513"/>
+            <circle cx="100" cy="87" r="8" fill="#000"/>
+            <circle cx="103" cy="84" r="3" fill="#FFF"/>
+            
+            <!-- Goggle strap -->
+            <rect x="40" y="82" width="10" height="10" fill="#333"/>
+            <rect x="150" y="82" width="10" height="10" fill="#333"/>
+            
+            <!-- Hair -->
+            <line x1="85" y1="50" x2="85" y2="65" stroke="#000" stroke-width="3"/>
+            <line x1="95" y1="48" x2="95" y2="65" stroke="#000" stroke-width="3"/>
+            <line x1="105" y1="48" x2="105" y2="65" stroke="#000" stroke-width="3"/>
+            <line x1="115" y1="50" x2="115" y2="65" stroke="#000" stroke-width="3"/>
+            
+            <!-- Smile -->
+            <path d="M 80 140 Q 100 150 120 140" stroke="#000" stroke-width="3" fill="none"/>
+            
+            <!-- Arms -->
+            <ellipse cx="35" cy="130" rx="12" ry="25" fill="#FFD700"/>
+            <ellipse cx="165" cy="130" rx="12" ry="25" fill="#FFD700"/>
+            
+            <!-- Gloves -->
+            <circle cx="35" cy="155" r="10" fill="#000"/>
+            <circle cx="165" cy="155" r="10" fill="#000"/>
+            
+            <!-- Legs -->
+            <rect x="75" y="180" width="20" height="15" fill="#4169E1"/>
+            <rect x="105" y="180" width="20" height="15" fill="#4169E1"/>
+            
+            <!-- Shoes -->
+            <ellipse cx="85" cy="195" rx="15" ry="8" fill="#000"/>
+            <ellipse cx="115" cy="195" rx="15" ry="8" fill="#000"/>
+            
+            <!-- Heart (for Valentine's theme) -->
+            <path d="M 100,105 C 95,100 85,105 85,112 C 85,118 100,125 100,125 C 100,125 115,118 115,112 C 115,105 105,100 100,105 Z" fill="#FF69B4"/>
+        </svg>
+
+        <div id="cuteMessage" style="min-height: 60px; margin: 20px 0; font-size: 1.3em; color: #ff1493; font-weight: bold;"></div>
+
+        <div class="buttons">
+            <button class="yes-btn" id="yesBtn" onclick="celebrate()">Yes! 💖</button>
+            <button class="no-btn" onclick="showMessage()">No</button>
+        </div>
+    </div>
+
+    <div class="celebration" id="celebration">
+        <div class="celebration-content">
+            <div class="hearts">💕 💖 💕 💖 💕</div>
+            <svg class="dancing-minion" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- Minion Body -->
+                <ellipse cx="100" cy="120" rx="60" ry="70" fill="#FFD700"/>
+                
+                <!-- Overalls -->
+                <rect x="40" y="110" width="120" height="80" fill="#4169E1" rx="10"/>
+                <circle cx="70" cy="130" r="8" fill="#C0C0C0"/>
+                <circle cx="130" cy="130" r="8" fill="#C0C0C0"/>
+                <line x1="70" y1="130" x2="70" y2="100" stroke="#4169E1" stroke-width="8"/>
+                <line x1="130" y1="130" x2="130" y2="100" stroke="#4169E1" stroke-width="8"/>
+                
+                <!-- Goggles -->
+                <rect x="50" y="70" width="100" height="35" fill="#333" rx="17"/>
+                <circle cx="100" cy="87" r="25" fill="#FFF"/>
+                <circle cx="100" cy="87" r="15" fill="#8B4513"/>
+                <circle cx="100" cy="87" r="8" fill="#000"/>
+                <circle cx="103" cy="84" r="3" fill="#FFF"/>
+                
+                <!-- Goggle strap -->
+                <rect x="40" y="82" width="10" height="10" fill="#333"/>
+                <rect x="150" y="82" width="10" height="10" fill="#333"/>
+                
+                <!-- Hair -->
+                <line x1="85" y1="50" x2="85" y2="65" stroke="#000" stroke-width="3"/>
+                <line x1="95" y1="48" x2="95" y2="65" stroke="#000" stroke-width="3"/>
+                <line x1="105" y1="48" x2="105" y2="65" stroke="#000" stroke-width="3"/>
+                <line x1="115" y1="50" x2="115" y2="65" stroke="#000" stroke-width="3"/>
+                
+                <!-- Big Happy Smile -->
+                <path d="M 75 140 Q 100 160 125 140" stroke="#000" stroke-width="4" fill="none"/>
+                
+                <!-- Arms Raised (celebrating) -->
+                <ellipse cx="35" cy="110" rx="12" ry="25" fill="#FFD700" transform="rotate(-30 35 110)"/>
+                <ellipse cx="165" cy="110" rx="12" ry="25" fill="#FFD700" transform="rotate(30 165 110)"/>
+                
+                <!-- Gloves -->
+                <circle cx="25" cy="95" r="10" fill="#000"/>
+                <circle cx="175" cy="95" r="10" fill="#000"/>
+                
+                <!-- Legs -->
+                <rect x="75" y="180" width="20" height="15" fill="#4169E1"/>
+                <rect x="105" y="180" width="20" height="15" fill="#4169E1"/>
+                
+                <!-- Shoes -->
+                <ellipse cx="85" cy="195" rx="15" ry="8" fill="#000"/>
+                <ellipse cx="115" cy="195" rx="15" ry="8" fill="#000"/>
+                
+                <!-- Hearts around minion -->
+                <path d="M 50,60 C 47,55 40,58 40,63 C 40,68 50,73 50,73 C 50,73 60,68 60,63 C 60,58 53,55 50,60 Z" fill="#FF1493"/>
+                <path d="M 150,60 C 147,55 140,58 140,63 C 140,68 150,73 150,73 C 150,73 160,68 160,63 C 160,58 153,55 150,60 Z" fill="#FF1493"/>
+            </svg>
+            <h2>Yay! 🎉</h2>
+            <p style="font-size: 1.5em; color: #ff69b4; margin-top: 20px;">
+                Best Valentine's Day ever! 💝
+            </p>
+        </div>
+    </div>
+
+    <script>
+        let yesButtonClicks = 0;
+        let noButtonClicks = 0;
+
+        const messages = [
+            "Why baby? 🥺 No way baby! 💔",
+            "Please baby! 🙏 Please say yes! 💕",
+            "Pretty please? 🌹 With a cherry on top? 🍒",
+            "I love you! 💖 I love you so much baby! 💝",
+            "Come on! 😘 You know you want to say yes! 💗",
+            "Baby please! 🥹 You're making me sad! 😢",
+            "One more chance? 💫 I promise to make you happy! 🌟",
+            "Still no? 😭 My heart is breaking! 💔💔",
+            "Think about it! 💭 We'd be perfect together! 💕",
+            "Last chance! ⭐ The YES button is calling you! 💖"
+        ];
+
+        function showMessage() {
+            const messageDiv = document.getElementById('cuteMessage');
+            
+            // Get the message for this click (cycle through if we run out)
+            const messageIndex = noButtonClicks % messages.length;
+            messageDiv.textContent = messages[messageIndex];
+            
+            noButtonClicks++;
+            
+            // Make the Yes button bigger each time No is clicked
+            yesButtonClicks++;
+            const yesBtn = document.getElementById('yesBtn');
+            const newPadding = 15 + (yesButtonClicks * 5);
+            const newWidth = 140 + (yesButtonClicks * 30);
+            
+            yesBtn.style.padding = `${newPadding}px ${newPadding * 2}px`;
+            yesBtn.style.fontSize = `${1.2 + (yesButtonClicks * 0.2)}em`;
+            yesBtn.style.minWidth = `${newWidth}px`;
+        }
+
+        function celebrate() {
+            document.getElementById('celebration').style.display = 'flex';
+            
+            // Create falling hearts
+            for (let i = 0; i < 20; i++) {
+                setTimeout(() => {
+                    createFallingHeart();
+                }, i * 100);
+            }
+        }
+
+        function createFallingHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '💕';
+            heart.style.position = 'fixed';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = '-50px';
+            heart.style.fontSize = (Math.random() * 30 + 20) + 'px';
+            heart.style.animation = 'fall 3s linear';
+            heart.style.zIndex = '999';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 3000);
+        }
+
+        // Add falling animation
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes fall {
+                to {
+                    top: 100vh;
+                    transform: translateX(${Math.random() * 100 - 50}px) rotate(360deg);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
